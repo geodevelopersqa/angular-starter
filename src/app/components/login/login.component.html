@@ -1,9 +1,20 @@
 <div class="container">
     <div class="flex-row">
-        <div class="col-md-6" style="display: flex;flex-direction: column;gap:0.3em">
-            <input type="text" placeholder="Username" name="txt_username">
-            <input type="password" placeholder="Password" name="txt_password">
-            <button (click)="login()">Login</button>
-        </div>
+        <table class="table table-responsive table-hover">
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Name</td>
+                    <td>Contact</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of result">
+                    <td>{{item.id}}</td>
+                    <td>{{item.title}}</td>
+                    <td>12345</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ComminService } from 'src/app/services/commin.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,13 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  username: string = '';
+  password: string = '';
+  result: any;
+
+  constructor(private api: ComminService) { }
 
   ngOnInit(): void {
+    this.fetchApi();
   }
 
-  login(){
-    console.log('login');
+  fetchApi() {
+    this.api.getApi().then(razika => {
+      this.result = razika;
+    });
   }
 
 }
