@@ -18,8 +18,10 @@ export class LoginComponent implements OnInit {
   }
 
   fetchApi() {
-    this.api.getApi().then(razika => {
-      this.result = razika;
+    this.api.getApi('user').then((razika:any) => {
+      // {status:200,data:[object]}
+      this.result = razika.data;
+      console.log(this.result);
     });
   }
 

@@ -10,6 +10,7 @@ import { VarStarterComponent } from './components/var-starter/var-starter.compon
 import { StarterComponent } from './components/starter/starter.component';
 import { LoginComponent } from './components/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
+import { CreateComponent } from './components/create/create.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {HttpClientModule} from '@angular/common/http';
     VariableStarter3Component,
     VarStarterComponent,
     StarterComponent,
-    LoginComponent
+    LoginComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,

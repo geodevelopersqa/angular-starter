@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ComminService {
-  url = "https://my-json-server.typicode.com/typicode/demo/posts";
+  url = "http://127.0.0.1:8000/api/";
   constructor(private http: HttpClient) { }
 
   postApi(data: any, subUrl: string) {
@@ -17,9 +17,9 @@ export class ComminService {
     });
   }
 
-  getApi() {
+  getApi(subUrl:string) {
     return new Promise((resolve, reject) => {
-      this.http.get(this.url).subscribe(res => {
+      this.http.get(this.url + subUrl).subscribe(res => {
         resolve(res);
       }, err => {
         reject(err);
